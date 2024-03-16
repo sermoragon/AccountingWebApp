@@ -5,12 +5,6 @@ const myData = [
     new Expense("Supermarket2", -20)
 ];
 
-function evaluateData(value){
-    if(value >= 0){
-        //return new Income()
-    }
-}
-
 let loadApp = () => {
     refreshApp();
     loadLists();
@@ -140,5 +134,27 @@ function eraseData(id){
     let toErase = myData.findIndex(data => data.id === id);
     myData.splice(toErase, 1);
     loadApp();
+}
+
+function addNewData(){
+    let appForm = document.forms["addNewDataForm"];
+    let newData= evaluateData(appForm["form_value"]);
+    let dataType = appForm["data_type"];
+    let description = appForm["form_description"];
+
+    myData.push(evaluateData());
+    loadApp();
+} 
+
+function evaluateData(value){
+    if(value >= 0){
+        return new Income(value);
+    }
+    else if(value <= 0){
+        return new Expense(value);
+    }
+    else{
+        console.log("error creating new data");
+    }
 }
 
