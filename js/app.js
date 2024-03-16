@@ -138,19 +138,18 @@ function eraseData(id){
 
 function addNewData(){
     let appForm = document.forms["addNewDataForm"];
-    let newData= evaluateData(appForm["form_value"]);
-    let dataType = appForm["data_type"];
-    let description = appForm["form_description"];
+    let newData = evaluateData(appForm["form_value"]);
+    newData.description = appForm["form_description"];
 
     myData.push(evaluateData());
     loadApp();
 } 
 
 function evaluateData(value){
-    if(value >= 0){
+    if(value > 0){
         return new Income(value);
     }
-    else if(value <= 0){
+    else if(value < 0){
         return new Expense(value);
     }
     else{
