@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountingApp</title>
+    <link href="css/estilos.css" rel="stylesheet"/> 
+</head>
+<body onload="loadApp()">
+    <div class="cabecero">
+        <div class="presupuesto">
+            <div class="presupuesto_titulo">
+                Total money
+            </div>
+            <div class="presupuesto_valor" id="total">
+                10000
+            </div>
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">
+                    Income
+                </div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id="income">
+                        1000
+                    </div>
+                    <div class="presupuesto_ingreso--porcentaje">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">
+                    Expenses
+                </div>
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--valor" id="expense">
+                        1000
+                    </div>
+                    <div class="presupuesto_egreso--porcentaje" id="percentage">
+                        30%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="addNewDataForm">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select name="New Data" class="agregar_tipo" id="type" >
+                    <option value="income" selected>income</option>
+                    <option value="expense">expense</option>
+                </select>
+                <input type="text" class="agregar_descripcion" 
+                placeholder="Add a descrption" id="form_descrption"/>
+                <input type="number" class="agregar_valor" placeholder="Value" id="form_value">
+            </div>
+        </div>
+    </form>
+
+    <div class="contenedor limpiarEstilos">
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">
+                Income
+            </h2>
+            <div id="income-list">
+                <!-- list of income -->
+            </div>
+        </div>
+        <div class="egreso">
+            <h2 class="egreso_titulo">
+                Expenses
+                <div class="derecha">
+                    relative %
+                </div>
+            </h2>
+            
+            <div id="expense-list">
+                <!-- list of expenses -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Data.js"></script>
+    <script src="js/Income.js"></script>
+    <script src="js/Expense.js"></script>
+    <script src="js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
