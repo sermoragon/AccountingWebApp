@@ -138,7 +138,7 @@ function eraseData(id){
 
 function addNewData(){
     let appForm = document.forms["addNewDataForm"];
-    let newData = evaluateData(appForm["form_description"], Number(appForm["form_value"].value));
+    let newData = evaluateData(document.getElementById("form_descrption").value, Number(appForm["form_value"].value));
 
     myData.push(newData);
     loadApp();
