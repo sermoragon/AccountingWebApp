@@ -1,5 +1,5 @@
 class Expense extends Data{
-    constructor(description, value){
+    constructor(description = "", value){
         super(description, value);
     }
     
